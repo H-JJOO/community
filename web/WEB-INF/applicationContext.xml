@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mybatis-sipring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/community"/>
+        <property name="username" value="root"/>
+        <property name="password" value="ansghkwo12"/>
+    </bean>
+    <!--DB연결, 추가-->
+    <!--HikariCp 연결, 추가-->
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+        <constructor-arg ref="hikariConfig"/>
+    </bean>
+    <!--HikariCp 연결, 추가-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!-- ↓ xml 파일이 소스랑 같은 디렉토리에 없을 경우 필요-->
+        <property name="mapperLocations" value="classpath:/mappers/*.xml" />
+        <property name="typeAliasesPackage" value="dev.hjjoo.community" />
+    </bean>
+
+    <mybatis-sipring:scan base-package="dev.hjjoo.community"/>
+
+    <!--tiles 세팅-->
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <!--SETTER 호출-->
+        <property name="definitions"><!--List<String>-->
+            <list>
+                <value>/WEB-INF/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!--tiles 세팅-->
+</beans>
