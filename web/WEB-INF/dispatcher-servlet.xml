@@ -29,7 +29,7 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
         <property name="order" value="1"/>
     </bean>
-    <!--웹 서버 화면만들때는 필수,(tiles 쓰게되면서 두번째로 밀리게 해줄거임) 추가-->
+    <!--웹 서버 화면만들때는 필수, tiles 추가-->
 
 
 </beans>

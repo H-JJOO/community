@@ -94,4 +94,12 @@
                 });
             });
         }
+
+    const resetBtn = joinFrmElem.querySelector('#reset');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            const idChkMsgElem = joinFrmElem.querySelector('#id-chk-msg');
+            idChkMsgElem.innerText = '';
+        })
+    }
 }

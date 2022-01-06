@@ -13,7 +13,7 @@
     <script defer src="/res/js/<tiles:getAsString name='common'/>.js"></script>
     <script defer src="/res/js/<tiles:getAsString name='addr1'/>/index.js"></script>
     <script defer src="/res/js/<tiles:getAsString name='addr2'/>.js"></script>
-    <title></title>
+    <title><tiles:insertAttribute name="title"/></title>
 </head>
 <body>
     <div id="container">

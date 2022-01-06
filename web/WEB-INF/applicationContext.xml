@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mybatis-sipring="http://mybatis.org/schema/mybatis-spring"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
@@ -23,7 +23,7 @@
         <property name="typeAliasesPackage" value="dev.hjjoo.community" />
     </bean>
 
-    <mybatis-sipring:scan base-package="dev.hjjoo.community"/>
+    <mybatis-spring:scan base-package="dev.hjjoo.community"/>
 
     <!--tiles 세팅-->
     <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

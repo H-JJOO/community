@@ -14,6 +14,6 @@
     </div>
     <div>
         <input type="submit" value="JOIN" id="join-btn">
-        <input type="reset" value="RESET">
+        <input type="reset" value="RESET" id="reset">
     </div>
 </form>
