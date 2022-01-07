@@ -1,5 +1,6 @@
 package dev.hjjoo.community.user;
 
+import dev.hjjoo.community.Const;
 import dev.hjjoo.community.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,55 +17,53 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @GetMapping("login")
-    public void login() {}
+    @GetMapping("/login")
+    public void login() {
+    }
+
+    @PostMapping("/login")
+    public String login(UserEntity entity, RedirectAttributes reAttr) {
+        int result = service.login(entity);
+        if (result != 1) {
+            reAttr.addFlashAttribute(Const.TRY_LOGIN, entity);//session 에 값  넣어서 다시 불러와서 request 에 넣어주고 session 에 값 바로 지움
+            switch (result) {
+                case 0:
+                    reAttr.addFlashAttribute(Const.MSG, Const.ERR_1);
+                    break;
+                case 2:
+                    reAttr.addFlashAttribute(Const.MSG, Const.ERR_2);
+                    break;
+                case 3:
+                    reAttr.addFlashAttribute(Const.MSG, Const.ERR_3);
+                    break;
+            }
+            return "redirect:/user/login";
+        }
+        return "redirect:/board/list";
+    }
 
     @GetMapping("/join")
-    public void join() {}
-
-    @GetMapping("/idChk/{uid}")//@PathVariable 변수명이랑 이름 맞춰야
-    @ResponseBody//return 이 Json 으로 된다, 받을때는 RequestBody
-    public Map<String, Integer> idChk(@PathVariable String uid) {
-        System.out.println("uid : " + uid);
-
-        Map<String, Integer> res = new HashMap<>();
-        res.put("result", service.idChk(uid));
-
-        return res;
-        // {"result" : 1} 문자열을 Json 형태로 변환
+    public void join() {
     }
 
     @PostMapping("/join")
     public String joinProc(UserEntity entity, RedirectAttributes reAttr) {
         int result = service.join(entity);
-        switch (result) {
-            case 1:
-                //TODO - 회원가입 성공하면 로그인 처리
-                return "redirect:/user/login";
+        if (result == 0) {
+            reAttr.addFlashAttribute(Const.MSG, Const.ERR_4);
+            return "redirect:/user/join";
         }
-        reAttr.addFlashAttribute("msg", "회원가입에 실패하였습니다.");
-        return "redirect:/user/join";
+        //회원가입 성공하면 로그인 처리
+        service.login(entity);
+        return "redirect:/board/list";
     }
 
-    @PostMapping("login")
-    public String login(UserEntity entity, RedirectAttributes reAttr) {
-        int result = service.login(entity);
-        switch (result) {
-            case 0:
-                reAttr.addFlashAttribute("msg", "오류가 발생하였습니다.");
-                break;
-            case 1:
-                return "redirect:/board/list";
-            case 2:
-                reAttr.addFlashAttribute("msg", "아이디를 확인하십시오.");
-                break;
-            case 3:
-                reAttr.addFlashAttribute("msg", "비밀번호를 확인하십시오,");
-                break;
-        }
-        reAttr.addFlashAttribute("msg", "회원가입을 실패하였습니다.");
-        return "redirect:/user/login";
+    @GetMapping("/idChk/{uid}")//@PathVariable 변수명이랑 이름 맞춰야
+    @ResponseBody//return 이 Json 으로 된다, 받을때는 RequestBody
+    public Map<String, Integer> idChk(@PathVariable String uid) {
+        Map<String, Integer> res = new HashMap();
+        res.put("result", service.idChk(uid));
+        return res;
+        // {"result" : 1} 문자열을 Json 형태로 변환
     }
-
-
 }
