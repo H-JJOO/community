@@ -1,8 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<!DOCTYPE html>
-<html lang="ko">
-<header>
-    <h1>헤더</h1>
+<tiles:importAttribute name="menuList"/>
+<header class="h-50">
+    <div class="flex-container flex-align-center p-lr-20">
+        <c:choose>
+            <c:when test="${sessionScope.loginUser == null}">
+                <div class="m-r-20"><a href="/user/login" class="font-color-white">로그인</a></div>
+            </c:when>
+            <c:otherwise>
+                <div class="m-r-20"><a href="/user/profile" class="font-color-white">프로필</a></div>
+                <div class="m-r-20"><a href="/user/logout" class="font-color-white">로그아웃</a></div>
+            </c:otherwise>
+        </c:choose>
+        <c:forEach items="${menuList}" var="item">
+            <div class="m-r-20"><a href="/board/list/${item.icategory}" class="font-color-white">${item.nm}</a></div>
+        </c:forEach>
+    </div>
 </header>

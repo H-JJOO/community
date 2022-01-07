@@ -4,5 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dev.hjjoo.community.board.BoardMapper">
 
+    <insert id="insBoard">
+        INSERT INTO t_board
+        (icategory, title, ctnt, iuser)
+        VALUES
+        (${icategory}, #{title}, #{ctnt}, ${iuser})
+    </insert>
+
+    <select id="selBoardList" resultType="BoardVo">
+        SELECT A.iboard, A.title, A.iuser, A.hits, A.rdt
+            , B.nm AS writernm, B.profileimg
+        FROM t_board A
+        LEFT JOIN t_user B
+        ON A.iuser = B.iuser
+        WHERE A.isdel = 0
+        AND A.icategory = ${icategory}
+        ORDER BY A.iboard DESC
+    </select>
 
 </mapper>

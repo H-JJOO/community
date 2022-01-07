@@ -25,14 +25,5 @@
 
     <mybatis-spring:scan base-package="dev.hjjoo.community"/>
 
-    <!--tiles 세팅-->
-    <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <!--SETTER 호출-->
-        <property name="definitions"><!--List<String>-->
-            <list>
-                <value>/WEB-INF/tiles.xml</value>
-            </list>
-        </property>
-    </bean>
-    <!--tiles 세팅-->
+
 </beans>
