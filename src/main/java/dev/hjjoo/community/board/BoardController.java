@@ -1,7 +1,6 @@
 package dev.hjjoo.community.board;
 
 import dev.hjjoo.community.Const;
-import dev.hjjoo.community.MenuPreparer;
 import dev.hjjoo.community.model.BoardDto;
 import dev.hjjoo.community.model.BoardEntity;
 import org.springframework.beans.factory.annotation.Autowired;

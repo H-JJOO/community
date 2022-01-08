@@ -1,6 +1,5 @@
 package dev.hjjoo.community.user;
 
-import dev.hjjoo.community.Const;
 import dev.hjjoo.community.UserUtils;
 import dev.hjjoo.community.model.UserEntity;
 import org.mindrot.jbcrypt.BCrypt;
@@ -8,7 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpSession;
 
 @Service
 public class UserService {
