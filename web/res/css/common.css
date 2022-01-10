@@ -1,9 +1,20 @@
 * { box-sizing: border-box; padding: 0; margin: 0; }
 a { text-decoration: none; }
 
+h1 {margin-bottom: 20px;}
+
+input {margin-bottom: 3px;}
+
+.d-sub-btn {display: flex; justify-content: center;}
+
+.sub-btn {width: 100%; height: 20px;}
+
+
+
 html, body { height: 100%; }
 header { background-color: coral; }
-footer { background-color: #4d4d4d;}
+footer { background-color: #4d4d4d; }
+
 .flex-align-center { align-items: center; }
 .flex-center { justify-content: center; align-items: center; }
 .flex-container { display: flex; height: 100%; width: 100%; }
@@ -14,12 +25,16 @@ footer { background-color: #4d4d4d;}
 .h-50 { height: 50px; }
 .h-100 { height: 100px; }
 
+.menu-selected {font-width: bold;}
+.menu-selected a {color: #000000;}
+
 .m-r-10 { margin-right: 10px; }
 .m-r-20 { margin-right: 20px; }
 
 .p-lr-10 { padding: 0 10px; }
 .p-lr-20 { padding: 0 20px; }
 
-#container { min-height: 100%; display: grid; grid-template-rows: 100px 1fr 50px;}
+.id-input > label > input {margin-left : 54.4px;}
 
-section {display: flex; flex-direction: column; justify-content: center; align-items: center;  height: 100%; width: 100%;}
+#container { min-height: 100%; display: grid; grid-template-rows: 50px 1fr 30px; }
+

@@ -22,9 +22,9 @@
                 <c:forEach items="${requestScope.list}" var="item">
                     <tr>
                         <td>${item.iboard}</td>
-                        <td>${item.title}</td>
+                        <td><c:out value="${item.title}"/></td>
                         <td>${item.hits}</td>
-                        <td>${item.iuser}</td>
+                        <td>${item.writernm}</td>
                         <td>${item.rdt}</td>
                     </tr>
                 </c:forEach>
