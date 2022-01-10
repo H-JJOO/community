@@ -4,12 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <tiles:importAttribute name="menuList"/>
 <c:set var="currentPagePath" value="${requestScope['javax.servlet.forward.request_uri']}"/>
-<c:set var="lastPath" value="0"/>
-<c:if test="${fn:contains(currentPagePath, '/board/list')}">
-    <c:set var="splitURI" value="${fn:split(currentPagePath, '/')}"/>
-    <c:set var="lastPath" value="${splitURI[fn:length(splitURI) - 1]}"/>
-</c:if>
-
+<c:set var="splitURI" value="${fn:split(currentPagePath, '/')}"/>
+<c:set var="lastPath" value="${splitURI[fn:length(splitURI) - 1]}"/>
 
 <header class="h-50">
     <div class="flex-container flex-align-center p-lr-20">
@@ -23,7 +19,7 @@
             </c:otherwise>
         </c:choose>
         <c:forEach items="${menuList}" var="item">
-            <div class="m-r-20 ${lastPath == item.icategory ? 'menu-selected' : ''}">
+            <div class="m-r-20 ${lastPath == ''.concat(item.icategory) ? 'menu-selected' : ''}">
                 <a href="/board/list/${item.icategory}" class="font-color-white">${item.nm}</a>
             </div>
         </c:forEach>
