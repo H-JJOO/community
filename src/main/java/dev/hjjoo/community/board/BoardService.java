@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class BoardService {
@@ -31,5 +32,24 @@ public class BoardService {
 
     public List<BoardVo> selBoardList(BoardDto dto) {
         return mapper.selBoardList(dto);
+    }
+
+    public BoardVo selBoard(BoardDto dto) {
+        BoardVo detail = mapper.selBoard(dto);//기존에 있는 ip 값 최초에는 null
+        if (!Objects.equals(dto.getLastip(), detail.getLastip())) {//조회 시도하는 ip 와 기존에 있는 ip 가 다르다면
+            int hitsResult = mapper.addHits(dto);//조회수 + 1 쿼리 실행
+            if (hitsResult == 1) {//조회수 + 1 쿼리문이 실행되었다면
+                detail.setHits(detail.getHits() + 1);//디테일 창에 들어갈때 + 1 바로 적용
+            }
+            mapper.updBoard(dto);
+        }
+        return detail;
+    }
+
+    public int delBoard(BoardEntity entity) {// icategory, iboard
+        entity.setIuser(userUtils.getLoginUserPk());
+        entity.setIsdel(1);
+        return mapper.updBoard(entity);
+
     }
 }

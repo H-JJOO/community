@@ -23,5 +23,10 @@
                 <a href="/board/list/${item.icategory}" class="font-color-white">${item.nm}</a>
             </div>
         </c:forEach>
+
+        <c:if test="${sessionScope.loginUser.iuser != null}" >
+            <div class="welcome">${sessionScope.loginUser.nm}(${sessionScope.loginUser.uid})님 환영합니다.</div>
+        </c:if>
+
     </div>
 </header>

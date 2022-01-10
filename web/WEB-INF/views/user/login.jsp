@@ -9,9 +9,9 @@
         <div class="pw-input"><label>password : <input type="password" name="upw"></label></div>
         <div class="d-sub-btn">
             <input type="submit" value="LOGIN" class="sub-btn">
-            <a href="/user/join"><input type="button" value="JOIN" class="sub-btn"></a>
         </div>
     </form>
+    <div><a href="/user/join"><button>JOIN</button></a></div>
 </div>
 <!--
 로그인 처리

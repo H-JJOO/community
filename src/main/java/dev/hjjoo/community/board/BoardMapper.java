@@ -11,4 +11,7 @@ import java.util.List;
 public interface BoardMapper {
     int insBoard(BoardEntity entity);
     List<BoardVo> selBoardList(BoardDto dto);
+    BoardVo selBoard(BoardDto dto);
+    int addHits(BoardEntity entity);
+    int updBoard(BoardEntity entity);
 }

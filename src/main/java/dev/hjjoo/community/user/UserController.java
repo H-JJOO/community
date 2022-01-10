@@ -44,6 +44,12 @@ public class UserController {
         return "redirect:/board/list/1";
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession hs) {
+        hs.invalidate();
+        return "redirect:/user/login";
+    }
+
     @GetMapping("/join")
     public void join() {
     }
@@ -69,12 +75,5 @@ public class UserController {
         // {"result" : 1} 문자열을 Json 형태로 변환
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest req) {
-        HttpSession session = req.getSession();
-        session.invalidate();
-        return "redirect:/user/login";
 
-
-    }
 }

@@ -6,7 +6,7 @@
     <div>${requestScope.msg}</div>
     <form action="/user/join" method="post" id="join-frm">
         <div><label>id : <input type="text" name="uid" required></label></div>
-        <div><input type="button" value="아이디 중복 체크" id="id-btn-chk"><span id="id-chk-msg"></span></div>
+        <div><input type="button" value="id-check" id="id-btn-chk"><span id="id-chk-msg"></span></div>
         <div><label>pw : <input type="password" name="upw" required></label></div>
         <div><label>pw-check : <input type="password" id="upw-chk" required></label></div>
         <div><label>name : <input type="text" name="nm" required></label></div>

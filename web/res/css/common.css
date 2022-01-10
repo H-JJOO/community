@@ -7,13 +7,18 @@ input {margin-bottom: 3px;}
 
 .d-sub-btn {display: flex; justify-content: center;}
 
-.sub-btn {width: 100%; height: 20px;}
+.sub-btn {width: 200px; margin-top: 20px;}
 
+button {width: 200px;}
 
+section {margin: 1%; border: 1px solid black; padding: 5px;}
 
-html, body { height: 100%; }
+html, body { height: 100%; scroll-behavior: auto;}
 header { background-color: coral; }
-footer { background-color: #4d4d4d; }
+footer { background-color: black; color: white; text-align: center; }
+
+table, th, td {border: 1px solid #4f4f4f; border-collapse: collapse;}
+th, td {padding: 7px;}
 
 .flex-align-center { align-items: center; }
 .flex-center { justify-content: center; align-items: center; }
@@ -26,7 +31,7 @@ footer { background-color: #4d4d4d; }
 .h-100 { height: 100px; }
 
 .menu-selected {font-width: bold;}
-.menu-selected a {color: #000000;}
+.menu-selected a {color: #ff0000;}
 
 .m-r-10 { margin-right: 10px; }
 .m-r-20 { margin-right: 20px; }
@@ -36,5 +41,7 @@ footer { background-color: #4d4d4d; }
 
 .id-input > label > input {margin-left : 54.4px;}
 
-#container { min-height: 100%; display: grid; grid-template-rows: 50px 1fr 30px; }
+.welcome { margin-left: auto;}
+
+#container { min-height: 100%; display: grid; grid-template-rows: 50px 1fr 50px; }
 
