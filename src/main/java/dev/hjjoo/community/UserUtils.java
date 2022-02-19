@@ -23,5 +23,4 @@ public class UserUtils {
     public int getLoginUserPk() {
         return getLoginUser() == null ? 0 : getLoginUser().getIuser();
     }
-
 }

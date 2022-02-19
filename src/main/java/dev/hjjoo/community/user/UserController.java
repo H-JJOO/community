@@ -74,6 +74,4 @@ public class UserController {
         return res;
         // {"result" : 1} 문자열을 Json 형태로 변환
     }
-
-
 }

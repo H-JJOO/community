@@ -50,6 +50,5 @@ public class BoardService {
         entity.setIuser(userUtils.getLoginUserPk());
         entity.setIsdel(1);
         return mapper.updBoard(entity);
-
     }
 }

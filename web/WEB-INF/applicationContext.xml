@@ -6,9 +6,9 @@
 
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/community"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3308/community"/>
         <property name="username" value="root"/>
-        <property name="password" value="ansghkwo12"/>
+        <property name="password" value="koreait"/>
     </bean>
     <!--DB연결, 추가-->
     <!--HikariCp 연결, 추가-->
