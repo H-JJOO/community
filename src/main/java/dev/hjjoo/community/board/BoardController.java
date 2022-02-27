@@ -52,7 +52,6 @@ public class BoardController {
         System.out.println("lastIp : " + lastIp);
         dto.setLastip(lastIp);
         model.addAttribute(Const.DATA, service.selBoard(dto));
-
     }
 
     @GetMapping("/del")
