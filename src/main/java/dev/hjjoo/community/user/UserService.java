@@ -57,4 +57,10 @@ public class UserService {
 
         return result == null ? 1 : 0;
     }
+
+    //이메일 중복 체크
+    public int emailChk(UserEntity entity) {
+        UserEntity result = mapper.selUser(entity);
+        return result == null ? 1 : 0;
+    }
 }
