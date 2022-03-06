@@ -31,6 +31,7 @@ public class UserService {
         if (!BCrypt.checkpw(entity.getUpw(),dbUser.getUpw())) {
             return 3;//비번 틀림
         }
+
         dbUser.setUpw(null);
         dbUser.setRdt(null);
         dbUser.setMdt(null);
