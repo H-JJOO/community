@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="#" onclick="window.open('http://localhost:8090/board/list/1', 'test', 'width = 100px, height = 500px')">Link</a>
   </body>
 </html>
