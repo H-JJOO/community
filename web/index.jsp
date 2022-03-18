@@ -11,6 +11,11 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="#" onclick="window.open('http://localhost:8090/board/list/1', 'test', 'width = 100px, height = 500px')">Link</a>
+  <a href="#" onclick="window.open('/board/list/1', 'test', 'width = 1000px, height = 1500px')">게임</a>
+  <a href="#" onclick="window.open('/board/list/2', 'test', 'width = 1000px, height = 1500px')">연예인</a>
+  <a href="#" onclick="window.open('/board/list/3', 'test', 'width = 1000px, height = 1500px')">뉴스</a>
+  <a href="#" onclick="window.open('/board/list/4', 'test', 'width = 1000px, height = 1500px')">정치</a>
+  <a href="#" onclick="window.open('/board/list/5', 'test', 'width = 1000px, height = 1500px')">스포츠</a>
+  <a href="#" onclick="window.open('/board/list/6', 'test', 'width = 1000px, height = 1500px')">경졔</a>
   </body>
 </html>
