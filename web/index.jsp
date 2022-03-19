@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
+  <a href="#" onclick="window.open('/user/login', 'test', 'width = 1000px, height = 1500px')">로그인</a>
+  <a href="#" onclick="window.open('/user/join', 'test', 'width = 1000px, height = 1500px')">회원가입</a>
   <a href="#" onclick="window.open('/board/list/1', 'test', 'width = 1000px, height = 1500px')">게임</a>
   <a href="#" onclick="window.open('/board/list/2', 'test', 'width = 1000px, height = 1500px')">연예인</a>
   <a href="#" onclick="window.open('/board/list/3', 'test', 'width = 1000px, height = 1500px')">뉴스</a>
